@@ -1,5 +1,5 @@
 class Student:
-    def __init__(self, name="N/A", age="N/A", grade="N/A"):
+    def __init__(self, name, age=13, grade="12th"):
         self._name = name
         self._age = age
         self._grade = grade
@@ -13,7 +13,7 @@ class Student:
     
     @get_name.setter
     def set_name(self, new_name):
-        if type(new_name) == int or new_name.isalpha() == False or len(new_name) < 3:
+        if (not isinstance(new_name, str)) or new_name.isalpha() == False or len(new_name) < 3:
             return f"{new_name} is not a valid name"
         
         else:
@@ -72,7 +72,9 @@ bryan.study()
 chad.advance()
 print(chad)
 
-bryan.set_name("Bryan")
+bryan.set_name = "Bryan"
+
+print(bryan)
 
 
 
