@@ -38,17 +38,14 @@ class Student:
     
     @get_grade.setter
     def set_grade(self, new_grade):
-        '''
-        if isinstance(new_grade, int) and 9 <= new_grade <= 12:
-            self._grade = f"{new_grade}th"
-        '''
+       
         if new_grade in ["9th", "10th", "11th", "12th"]:
             self._grade = new_grade
         
         else:
             print("Enter a valid grade")
 
-    def advance(self): ## If there is an error, check self._grade
+    def advance(self): 
         grade_list = ["9th", "10th", "11th", "12th"]
         if self._grade == "12th":
             print("Good luck on your next chapter!")
