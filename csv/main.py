@@ -1,6 +1,8 @@
-import csv
+
+
 
 species = input("What kind of pet are you interested in? dog or cat: ")
+import csv
 
 try:
     with open(f'./data/{species.lower()}s.csv') as csv_file:
@@ -20,26 +22,25 @@ class Animal:
     def __str__(self):
         return f"{self._name} is a {self._age} year old {self._breed}"
     
-    
-@property
-def get_name(self):
-    return self._name
+    @property
+    def get_name(self):
+        return self._name
 
-@get_name.setter
-def set_name(self, new_name):
-    if isinstance(new_name, str):
-        self.name = new_name
-    else:
-        print('Name must be a string')
+    @get_name.setter
+    def get_name(self, new_name):
+        if isinstance(new_name, str):
+            self._name = new_name
+        else:
+            print('Name must be a string')
 
-@property
-def get_age(self):
-    return self._age
+    @property
+    def get_age(self):
+        return self._age
 
-@get_age.setter
-def set_age(self, new_age):
-    if isinstance(new_age, str) and new_age > 0:
-        self._age = new_age
-    else:
-        print("")
+    @get_age.setter
+    def get_age(self, new_age):
+        if isinstance(new_age, (int, float)) and new_age > 0:
+            self._age = new_age
+        else:
+            print("Age must be a positive number.")
     
