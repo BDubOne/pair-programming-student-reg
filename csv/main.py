@@ -6,13 +6,15 @@ import csv
 
 try:
     with open(f'./data/{species.lower()}s.csv') as csv_file:
-        reader_csv_file = csv.DictReader(csv_file)
+        reader_csv_file = csv.DictReader(csv_file, skipinitialspace=True)
+
 
         for i in reader_csv_file:
-            print(i)
+            print(f'{i["name"]} is a {i["age"]} year old {i["breed"]}')
+            
 except:
     print(f"Sorry, we don't have any {species}s here.")
-
+'''
 class Animal:
     def __init__(self, name, age, breed):
         self._name = name
@@ -43,4 +45,4 @@ class Animal:
             self._age = new_age
         else:
             print("Age must be a positive number.")
-    
+'''
